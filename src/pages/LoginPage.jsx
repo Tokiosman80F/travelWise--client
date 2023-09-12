@@ -5,7 +5,7 @@ import { AuthContext } from "../provider/AuthProvider";
 
 
 const LoginPage = () => {
-  const {createUser}=useContext(AuthContext)
+  const {loginUser}=useContext(AuthContext)
   const handleLogin=(event)=>{
     event.preventDefault()
     const form=event.target
@@ -13,14 +13,13 @@ const LoginPage = () => {
     const password=form.password.value
     console.log("Email:",email);
     console.log("Password:",password);
-
-    createUser(email,password)
-    .then((userCredential)=> {
-      const user=userCredential.user;
-      console.log(user);
-    } )
+    
+    loginUser(email,password)
+    .then((userCredential)=>{
+      const user=userCredential.user
+      console.log(user)})
     .catch((error)=>console.log(error.message))
-
+   
   }
   return (
       <Form style={{ width: "25rem" }} onSubmit={handleLogin} className='border border-2 p-4 mx-auto'>
