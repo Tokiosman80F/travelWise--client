@@ -14,10 +14,10 @@ const NavigationBar = () => {
                 className='mx-auto my-2 my-lg-0 d-flex gap-2'
                 style={{ maxHeight: "150px" }}
                 navbarScroll>
-                <Link className='text-decoration-none text-secondary '>Home</Link>
-                <Link className='text-decoration-none text-secondary  '>Destination</Link>
-                <Link className='text-decoration-none text-secondary '>Blogs</Link>
-                <Link className='text-decoration-none text-secondary '>Contact</Link>
+                <Link className='text-decoration-none text-secondary' to='/'>Home</Link>
+                <Link className='text-decoration-none text-secondary' to="/destination">Destination</Link>
+                <Link className='text-decoration-none text-secondary 'to="/Blogs">Blogs</Link>
+            
               </Nav>
               <Form className='d-flex'>
                 
