@@ -31,11 +31,11 @@ const Home = () => {
           </>
         ) : (
           <>
-            <h2>Cox's Bazar</h2>
+            <h2>Coxs Bazar</h2>
             <p>
-              "Relax on the world's longest natural sea beach and enjoy scenic
-              beauty. Cox's Bazar offers miles of sandy beaches, Himchari
-              National Park, St. Martin's Island, and Adinath Temple."
+              Relax on the worlds longest natural sea beach and enjoy scenic
+              beauty. Coxs Bazar offers miles of sandy beaches, Himchari
+              National Park, St. Martins Island, and Adinath Temple.
             </p>
           </>
         )}
