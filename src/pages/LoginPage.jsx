@@ -1,10 +1,10 @@
-import { Button, Container, Form } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 
 const LoginPage = () => {
   return (
-    <Container>
+    
       <Form style={{ width: "25rem" }} className='border border-2 p-4 mx-auto'>
         <h2 className='text-center py-2'>Login </h2>
         <Form.Group className='mb-3' controlId='formBasicEmail'>
@@ -34,7 +34,7 @@ const LoginPage = () => {
           Login
         </Button>
       </Form>
-    </Container>
+  
   );
 };
 

@@ -1,10 +1,10 @@
-import { Button, Container, Form } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 
 const RegisterPage = () => {
     return (
-      <Container>
+      
         <Form
           style={{ width: "25rem" }}
           className='border border-2 p-4 mx-auto'>
@@ -44,7 +44,7 @@ const RegisterPage = () => {
             />
           </Form.Group>
           <Form.Group className='mb-3' controlId='formBasicCheckbox'>
-            <Form.Check type='checkbox' label={<>Accept {<Link>Term & Condition</Link>}</>} />
+            <Form.Check type='checkbox' label={<>Accept {<Link to="/terms">Term & Condition</Link>}</>} />
           </Form.Group>
           <p>
             Already Register? then <Link to='/login'>Login Here</Link>
@@ -53,7 +53,7 @@ const RegisterPage = () => {
             Register
           </Button>
         </Form>
-      </Container>
+      
     );
 }
 
