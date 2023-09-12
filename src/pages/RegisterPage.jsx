@@ -1,11 +1,28 @@
 import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
+import { useContext } from "react";
 
 
 const RegisterPage = () => {
+    const { createUser } = useContext(AuthContext);
+    const handleRegister=(event)=>{
+        event.preventDefault()
+        const form=event.target
+        const email=form.email.value
+        const password=form.password.value
+        const confirm=form.confirm.value
+        console.log(email,password,confirm);
+
+         createUser(email, password)
+           .then((userCredential) => {
+             const user = userCredential.user;
+             console.log(user);
+           })
+           .catch((error) => console.log(error.message));
+    }
     return (
-      
-        <Form
+        <Form onSubmit={handleRegister}
           style={{ width: "25rem" }}
           className='border border-2 p-4 mx-auto'>
           <h2 className='text-center py-2'>Register Here </h2>

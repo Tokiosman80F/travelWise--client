@@ -1,11 +1,29 @@
+import { useContext } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
 
 
 const LoginPage = () => {
+  const {createUser}=useContext(AuthContext)
+  const handleLogin=(event)=>{
+    event.preventDefault()
+    const form=event.target
+    const email=form.email.value
+    const password=form.password.value
+    console.log("Email:",email);
+    console.log("Password:",password);
+
+    createUser(email,password)
+    .then((userCredential)=> {
+      const user=userCredential.user;
+      console.log(user);
+    } )
+    .catch((error)=>console.log(error.message))
+
+  }
   return (
-    
-      <Form style={{ width: "25rem" }} className='border border-2 p-4 mx-auto'>
+      <Form style={{ width: "25rem" }} onSubmit={handleLogin} className='border border-2 p-4 mx-auto'>
         <h2 className='text-center py-2'>Login </h2>
         <Form.Group className='mb-3' controlId='formBasicEmail'>
           <Form.Control
