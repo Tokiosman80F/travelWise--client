@@ -1,13 +1,16 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import ReactDatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Destination = () => {
+  const {user}=useContext(AuthContext)
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndtDate] = useState();
   console.log("start date =>", startDate);
   console.log("end date =>", endDate);
+  console.log("Use COntext ==>>",user);
   return (
     <Container>
       <Row>
