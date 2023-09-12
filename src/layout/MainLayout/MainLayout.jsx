@@ -2,13 +2,17 @@
 
 import { Container } from "react-bootstrap"
 import NavigationBar from "../../pages/shared/NavigationBar"
+// import Home from "../../pages/Home/Home"
+import { Outlet } from "react-router-dom"
 
 const MainLayout = () => {
     return (
-        <Container>
-            <NavigationBar></NavigationBar>
-        </Container>
-    )
+        <>
+        <NavigationBar></NavigationBar>
+        <Outlet></Outlet>
+        </>
+
+    );
 }
 
 export default MainLayout

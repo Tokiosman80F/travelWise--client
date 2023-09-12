@@ -1,10 +1,10 @@
 // import React from 'react'
-import { Button, Container, Form, Nav, NavDropdown, Navbar } from 'react-bootstrap';
+import { Button, Container, Form, Nav, Navbar } from 'react-bootstrap';
 import logo from '../../assets/logo.png'
 import { Link } from 'react-router-dom';
 const NavigationBar = () => {
     return (
-      <div>
+      <Container>
         <Navbar expand='lg' className='bg-body-tertiary'>
           <Container fluid>
             <Navbar.Brand href='#'><img src={logo} alt="" width={150} /></Navbar.Brand>
@@ -26,7 +26,7 @@ const NavigationBar = () => {
             </Navbar.Collapse>
           </Container>
         </Navbar>
-      </div>
+      </Container>
     );
 }
 

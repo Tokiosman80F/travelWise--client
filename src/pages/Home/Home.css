@@ -1,0 +1,30 @@
+.center-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Horizontal centering */
+  align-items: center; /* Vertical centering */
+  height: 300px; /* Set a height for the container */
+}
+
+.overlay-container {
+  position: relative;
+  width: 100%; /* Ensure the container has a width set */
+  height: 100vh; /* Set the height to 100% of the viewport height or adjust as needed */
+}
+
+.overlay {
+  content: "";
+  background: rgba(0, 0, 0, 0.5); /* Adjust the overlay color and opacity as needed */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+/* Ensure the dynamic image covers the entire container */
+.overlay-container .overlay {
+  background-size: cover;
+  background-position: center;
+}
