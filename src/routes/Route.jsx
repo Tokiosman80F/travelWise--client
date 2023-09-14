@@ -7,6 +7,7 @@ import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegisterPage";
 import Terms from "../pages/Terms";
 import Blogs from "../pages/Blogs";
+import PrivateRoute from "./PrivateRoute";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -42,12 +43,17 @@ export const router = createBrowserRouter([
       },
       {
         path: "/destination",
-        element: <Destination></Destination>,
+        element: (
+          <PrivateRoute>
+            <Destination></Destination>
+          </PrivateRoute>
+        ),
+        loader: () => fetch("http://localhost:3000/destination"),
       },
       {
-        path:"/blogs",
-        element:<Blogs></Blogs>
-      }
+        path: "/blogs",
+        element: <Blogs></Blogs>,
+      },
     ],
   },
 ]);
