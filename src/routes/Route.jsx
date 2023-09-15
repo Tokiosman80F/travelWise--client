@@ -8,6 +8,9 @@ import RegisterPage from "../pages/RegisterPage";
 import Terms from "../pages/Terms";
 import Blogs from "../pages/Blogs";
 import PrivateRoute from "./PrivateRoute";
+import BookedHotel from "../pages/BookedHotel";
+
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -54,6 +57,12 @@ export const router = createBrowserRouter([
         path: "/blogs",
         element: <Blogs></Blogs>,
       },
+      {
+        path:'/hotel',
+        element:<BookedHotel></BookedHotel>,
+        loader:()=> fetch('http://localhost:3000/hotelData')
+      }
     ],
   },
 ]);
+

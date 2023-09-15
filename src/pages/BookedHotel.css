@@ -1,0 +1,12 @@
+.two-cards-container {
+    display: flex;        /* Use Flexbox */
+    justify-content: space-between; /* Arrange items with space between them */
+  }
+  
+  .card {
+    flex: 1; /* Distribute available space equally between cards */
+    border: 1px solid #ccc;
+    padding: 16px;
+    margin: 8px;
+    text-align: center;
+  }

@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import { toast } from "react-toastify";
 
 
 const LoginPage = () => {
@@ -23,9 +24,13 @@ const LoginPage = () => {
     .then((userCredential)=>{
       const user=userCredential.user
       console.log(user)
+      toast.info("Successfully Login");
       navigate(from, { replace: true });
     })
-    .catch((error)=>console.log(error.message))
+    .catch((error)=>{
+    console.log(error.message)
+    toast.error("login failed");
+    })
    
   }
   return (
